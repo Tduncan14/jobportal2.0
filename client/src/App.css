@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 #components-layout-demo-custom-trigger .trigger {
   padding: 0 24px;
   font-size: 18px;
@@ -21,4 +18,11 @@
 
 .site-layout .site-layout-background {
   background: #fff;
+}
+
+
+/* ant design */
+
+.ant-layout-sider{
+  height:100vh;
 }

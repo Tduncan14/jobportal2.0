@@ -12,7 +12,7 @@ import {
 
 
   
-  const DefaultLayout = ({children}) => {
+  const DefaultLayout = (props) => {
     const [collapsed, setCollapsed] = useState(false);
     return (
       <Layout>
@@ -61,7 +61,7 @@ import {
               minHeight: 280,
             }}
           >
-            {children}
+            {props.children}
           </Content>
         </Layout>
       </Layout>
