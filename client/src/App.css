@@ -21,8 +21,21 @@
 }
 
 
-/* ant design */
+/* ant design override */
 
 .ant-layout-sider{
   height:100vh;
+}
+
+
+.ant-layout-header span svg{
+  height:30px;
+  width:30px;
+  margin-left:10px;
+   
+}
+
+.logo{
+  text-align:center;
+  font-size:24px;
 }

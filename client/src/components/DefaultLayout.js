@@ -8,7 +8,10 @@ import {
   import { Layout, Menu } from 'antd';
   import React, { useState } from 'react';
   import './DefaultLayout.css'
+  import { Link } from 'react-router-dom';
+
   const { Header, Sider, Content } = Layout;
+ 
 
 
   
@@ -17,26 +20,36 @@ import {
     return (
       <Layout>
         <Sider trigger={null} collapsible collapsed={collapsed}>
-          <div className="logo" />
+          <div className="logo">{  !collapsed ? <h1 style={{color:'white'}}>Jobs </h1> : "" }</div>
           <Menu
             theme="dark"
             mode="inline"
-            defaultSelectedKeys={['1']}
+            defaultSelectedKeys={[window.location.pathname]}
             items={[
               {
-                key: '1',
+                key: '/profile',
                 icon: <UserOutlined />,
-                label: 'nav 1',
+                label: <Link to="/profile">Profile</Link>
               },
               {
-                key: '2',
+                key: '/',
                 icon: <VideoCameraOutlined />,
-                label: 'nav 2',
+                label: <Link to="/">Home</Link>,
               },
               {
-                key: '3',
+                key: '/appliedJobs',
                 icon: <UploadOutlined />,
-                label: 'nav 3',
+                label: <Link to="/appliedJobs">Applied Jobs</Link>,
+              },
+              {
+                key: '/postjobs',
+                icon: <VideoCameraOutlined />,
+                label: <Link to="/postjobs">Post Jobs</Link>,
+              },
+              {
+                key: '/jobinfo',
+                icon: <UploadOutlined />,
+                label: <Link to="/jobinfo"> Job Info</Link>,
               },
             ]}
           />
