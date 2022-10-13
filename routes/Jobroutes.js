@@ -11,7 +11,7 @@ router.get('/getalljobs',  async (req,res)=> {
 
     try{
         const jobs = await jobDB.find()
-        res.send(jobs)
+        res.status(200).send(jobs)
     }
 
     catch(error){
@@ -19,3 +19,7 @@ router.get('/getalljobs',  async (req,res)=> {
     }
 
  })
+
+
+
+ module.exports = router;

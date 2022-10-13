@@ -1,20 +1,27 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const JobRoute = require('./routes/Jobroutes');
+const cors = require('cors');
 
 const app = express()
+dotenv.config()
 
 
-const Router = express.Router();
+// const Router = express.Router();
 
- mongoose.connect(process.env.MONGOOSE_URL,{useNewUrlParser:true,useCreateIndex:true},()=>{
-   console.log('user connected to the db');
-})
+mongoose.connect(process.env.URI)
+.then(() => console.log('connected to the database'));
 
 
-app.use('/',(req,res)=> {
-    res.send('you are not visiting this port');
-})
+app.use(cors())
+app.use(express.json())
+app.use('/api/jobs',JobRoute);
+
+
+// app.use('/',(req,res)=> {
+//     res.send('you are not visiting this port');
+// })
 
 
 
