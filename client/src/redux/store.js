@@ -4,17 +4,20 @@ import { configureStore } from '@reduxjs/toolkit'
 import {applyMiddleware,useStore} from 'react-redux';
 import thunk from 'redux-thunk';
 import { jobsReducer } from './reducers/jobsReducer';
+import { loaderReducer } from './reducers/loadReducer';
 
 
 
 const reducer = combineReducers({
-    jobsReducer:jobsReducer
+    jobsReducer:jobsReducer,
+    loaderReducer:loaderReducer
 })
 
 
 
 const store = configureStore({
-    reducer
+    reducer,
+    middleware:[thunk]
 
 }
 )

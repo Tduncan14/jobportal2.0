@@ -8,9 +8,24 @@ import{BrowserRouter,Routes,Route} from 'react-router-dom'
 import Profile from './pages/Profile/Profile';
 import AppliedJobs from './pages/AppliedJobs/AppliedJobs';
 import PostJobs from './pages/PostJobs/PostJobs';
+import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
+import { useSelector } from 'react-redux';
+import { loaderReducer } from './redux/reducers/loadReducer';
 
 function App() {
+
+  const {loader} = useSelector(state => state.loaderReducer)
+
   return (
+
+    <div className="App">
+
+  { loader ?  <div className="sweet-loading text-center"> <ClimbingBoxLoader
+  color="#001529"
+  size={75} 
+/>  </div>: ' '}
+
+
     <BrowserRouter>
       <Routes>
         <Route exact path= '/'  element={<Home />} />
@@ -21,6 +36,8 @@ function App() {
       
       </Routes>
     </BrowserRouter>
+
+    </div>
   );
 }
 
