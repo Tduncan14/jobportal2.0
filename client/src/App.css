@@ -41,12 +41,24 @@
 }
 
 .sweet-loading{
+
+  position:fixed;
+  top:5% !important;
+  height:100%;
+  width:100%;
+  z-index:9999;
+  text-align: center;
+  margin-right:auto;
+  margin-left:auto;
   display:flex;
+  justify-content: center;
+  align-items: center;
+  /* display:flex;
   text-align: center !important; 
   margin-right:auto;
   margin-left:auto;
   margin-top:29rem;
   margin-bottom:29rem;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
